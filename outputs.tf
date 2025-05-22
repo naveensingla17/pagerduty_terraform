@@ -25,11 +25,6 @@
 #   }
 # }
 
-### test connection with sandbox pagerduty
-output "pagerduty_user_naveen_id" {
-  value = data.pagerduty_user.Naveen_Singla.id
-}
-
 # Output all user details
 output "all_pagerduty_users" {
   value = {

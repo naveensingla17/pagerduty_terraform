@@ -35,7 +35,8 @@ locals {
       role      = local.roles.admin
       time_zone = local.time_zone.asia
       job_title = "Cloud & Observability Engineer"
-      teams = [local.team_names.CI_GLOB_Observability_Operations]
+      # teams = [local.team_names.CI_GLOB_Observability_Operations]
+      teams = [pagerduty_team.teams["CI_GLOB_Observability_Operations"].id]
     }
     "sajeer_kandi" = {
       name  = "Sajeer Kandi"
@@ -55,7 +56,7 @@ locals {
     # Add more users here
   }
 
-#Add / Create Teams here
+# Create Teams here
   add_teams = {
     "CI_GLOB_Observability_Operations" = {
       name        = "CI.GLOB-Observability Operations"
