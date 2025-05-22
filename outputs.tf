@@ -30,15 +30,25 @@ output "pagerduty_user_naveen_id" {
   value = data.pagerduty_user.Naveen_Singla.id
 }
 
-# Output all user IDs and emails
+# Output all user details
 output "all_pagerduty_users" {
   value = {
-    for user in data.pagerduty_users.all.users : user.name => {
+    for user in data.pagerduty_users.all_users.users : user.name => {
       name = user.name
       id    = user.id
       email = user.email
       role = user.role
       time_zone = user.time_zone
+    }
+  }
+}
+
+# Output all teams details
+output "all_pagerduty_teams" {
+  value = {
+    for team in data.pagerduty_teams.all_teams.teams : team.id => {
+      name = team.name
+      description = team.description
     }
   }
 }

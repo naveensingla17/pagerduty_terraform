@@ -44,7 +44,24 @@ locals {
       time_zone = local.time_zone.asia
       job_title = "DevOps Engineer"
     }
+    #Team DL as user for email alert notification for less critical alert
+    "CI_GLOB_Observability_Operations" = {
+      name      = "CI.GLOB-Observability Operations"
+      email     = "Observability@avaloq.com"
+      role      = local.roles.read_only
+      time_zone = local.time_zone.europe
+      job_title = ""
+    }
     # Add more users here
+  }
+
+#Add / Create Teams here
+  add_teams = {
+    "CI_GLOB_Observability_Operations" = {
+      name        = "CI.GLOB-Observability Operations"
+      description = "Global Observability Operation Team"
+    }
+    # Add more Teams here
   }
 
 # To associate user with team

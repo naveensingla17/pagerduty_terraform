@@ -4,7 +4,7 @@ data "pagerduty_user" "Naveen_Singla" {
 }
 
 # Get all PagerDuty users
-data "pagerduty_users" "all" {}
+data "pagerduty_users" "all_users" {}
 
 
 # Get all teams
