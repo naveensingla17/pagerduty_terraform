@@ -1,3 +1,28 @@
+# Output all user details
+output "all_pagerduty_users" {
+  value = {
+    for user in data.pagerduty_users.all_users.users : user.name => {
+      name = user.name
+      id    = user.id
+      email = user.email
+      role = user.role
+      time_zone = user.time_zone
+    }
+  }
+}
+
+# Output all teams details
+output "all_pagerduty_teams" {
+  value = {
+    for team in data.pagerduty_teams.all_teams.teams : team.id => {
+      name = team.name
+      description = team.description
+    }
+  }
+}
+
+
+########## backup
 # ### Mandatory to display in output to use the escalation policy value in service creation
 
 # output "escalation_policy_ids" {
@@ -24,26 +49,3 @@
 #     "AMS_L2_Notification"     = pagerduty_escalation_policy.AMS_L2_Notification.id
 #   }
 # }
-
-# Output all user details
-output "all_pagerduty_users" {
-  value = {
-    for user in data.pagerduty_users.all_users.users : user.name => {
-      name = user.name
-      id    = user.id
-      email = user.email
-      role = user.role
-      time_zone = user.time_zone
-    }
-  }
-}
-
-# Output all teams details
-output "all_pagerduty_teams" {
-  value = {
-    for team in data.pagerduty_teams.all_teams.teams : team.id => {
-      name = team.name
-      description = team.description
-    }
-  }
-}
