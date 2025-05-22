@@ -15,11 +15,11 @@ locals {
     europe         = "Europe/Berlin"
   }
 
-# team list to refer
-  team_names = {
-    CI_GLOB_Observability_Operations         = "P2Y8PGM"
-    Global_Observability_and_Quality_TEST    = "P2Y8PGM"
-  }
+# # team list to refer
+#   team_names = {
+#     CI_GLOB_Observability_Operations         = "P2Y8PGM"
+#     Global_Observability_and_Quality_TEST    = "P2Y8PGM"
+#   }
 
 # Build a map of team ID -> team name
   team_map = {
